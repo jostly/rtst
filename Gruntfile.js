@@ -1,13 +1,44 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		requirejs: {
+			compile: {
+				options: {
+					almond: true,
+					replaceRequireScript: [{
+						files: ['build/index.html'],
+						module: 'main'
+					}],
+					modules: [{name: 'main'}],
+					dir: 'build',
+					appDir: 'src',
+					baseUrl: 'js',
+					optimize: "none"
+					//mainConfigFile: "main.js",
+					//out: "build/rtst.js"
+				}
+			}
+		},
+		coffee: {
+			compile: {
+				expand: true,
+				flatten: false,
+				options: {
+					bare: true,	
+				},
+				cwd: 'src',
+				src: ['**/*.coffee'],
+				dest: 'build/cjs/src/',
+				ext: '.js'
+			}
+		},
 		jasmine_node: {
 			specNameMatcher: "spec", // load only specs containing specNameMatcher
 			projectRoot: ".",
 			requirejs: false,
 			forceExit: true,
 			useCoffee: true,
-			extensions: "coffee|js",
+			extensions: "coffe|js",
 			jUnit: {
 				report: false,
 				savePath : "./build/reports/jasmine/",
@@ -45,6 +76,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-jasmine-node');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-coffeeify');
+	grunt.loadNpmTasks('grunt-contrib-coffee');
+	grunt.loadNpmTasks('grunt-requirejs');
 
 	// Default task(s).
 	grunt.registerTask('default', ['jasmine_node', 'coffeeify', 'uglify']);	
