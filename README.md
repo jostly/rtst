@@ -1,12 +1,19 @@
 rtst
 ====
 
-Skeleton for node.js + grunt + jasmine + coffeeify
+Skeleton for node.js + grunt + jasmine + require
 
 Requires node.js and grunt-cli installed
 
-Use
-  grunt
-to build a minified bundle
-  grunt watch
-to launch a continuous test cycle
+Install/update dependencies:
+
+	npm install
+
+
+Build minified bundle:
+
+	grunt
+
+Launch a continuous test cycle: (todo)
+
+	grunt watch
