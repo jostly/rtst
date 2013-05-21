@@ -8,6 +8,6 @@ require.config({
 	}
 });
 
-require(['cs!app'], function(Main) {
+require(['cs!app'], function(App) {
 	console.log("Loaded main");
 });

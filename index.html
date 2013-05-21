@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>rtst</title>
-  <!--<script data-main="src/main" src="lib/require.js"></script>-->
-  <script src="build/rtst.js"></script> 
+  <!-- Either 1) Load uncompiled scripts via require.js -->
+  <script src="lib/require.js"></script>
+
+  <!-- Or 2) Load precompiled script -->
+  <!--<script src="dist/rtst.js"></script>-->
+  <script src="main.js"></script>
 </head>
 <body>
 
-	<h1>HAHA</h1>
-	<script>
-		require(['cs!app'], function(Main) {
-	console.log("Loaded main");
-});
-	</script>
 
 </body>
 </html>

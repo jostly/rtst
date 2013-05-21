@@ -10,23 +10,23 @@ module.exports = function(grunt) {
 						module: 'main'
 					}],
 					name: 'cs!app',
-					baseUrl: 'src',
+					//baseUrl: 'src',
 					optimize: 'uglify2',
 					generateSourceMaps: true,
 					preserveLicenseComments: false,
 					useSourceUrl: true,
 					mainConfigFile: "main.js",
-					out: "build/rtst.js"
+					out: "dist/rtst.js"
 				}
 			}
 		},
 		jasmine_node: {
 			specNameMatcher: "spec", // load only specs containing specNameMatcher
 			projectRoot: ".",
-			requirejs: false,
+			requirejs: true,
 			forceExit: true,
 			useCoffee: true,
-			extensions: "coffe|js",
+			extensions: "coffee|js",
 			jUnit: {
 				report: false,
 				savePath : "./build/reports/jasmine/",

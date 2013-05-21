@@ -1,6 +1,6 @@
-describe "adder", ->
-	Adder = require('../src/adder.coffee')
+require ['cs!../src/adder/adder'], (Adder) ->
+	describe "adder", ->
 
-	it "should add 1 and 2", ->
+		it "should add 1 and 2", ->
 
-		expect(new Adder().add(1,2)).toBe 3
+			expect(new Adder().add(1,2)).toBe 3
