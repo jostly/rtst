@@ -5,12 +5,7 @@ module.exports = function(grunt) {
 			compile: {
 				options: {
 					almond: true,
-					replaceRequireScript: [{
-						files: ['build/index.html'],
-						module: 'main'
-					}],
 					name: 'cs!app',
-					//baseUrl: 'src',
 					optimize: 'uglify2',
 					generateSourceMaps: true,
 					preserveLicenseComments: false,
