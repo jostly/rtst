@@ -3,12 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>rtst</title>
-  <script data-main="main" src="lib/require.js"></script>
-  <!--<script src="build/rtst.js"></script> -->
+  <!--<script data-main="src/main" src="lib/require.js"></script>-->
+  <script src="build/rtst.js"></script> 
 </head>
 <body>
 
 	<h1>HAHA</h1>
+	<script>
+		require(['cs!app'], function(Main) {
+	console.log("Loaded main");
+});
+	</script>
 
 </body>
 </html>
