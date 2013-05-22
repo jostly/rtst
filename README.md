@@ -14,6 +14,6 @@ Build minified bundle:
 
 	grunt
 
-Launch a continuous test cycle: (todo)
+Launch a continuous test cycle: 
 
 	grunt watch
