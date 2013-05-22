@@ -1,4 +1,4 @@
-require ['cs!../src/adder/adder'], (Adder) ->
+require ['cs!adder/adder'], (Adder) ->
 	describe "adder", ->
 
 		it "should add 1 and 2", ->
