@@ -18,10 +18,14 @@ module.exports = function(grunt) {
 					almond: true,
 					name: settings.app,
 					optimize: 'uglify2',
-					generateSourceMaps: true,
-					preserveLicenseComments: false,
-					useSourceUrl: true,
+					generateSourceMaps: false,
+					preserveLicenseComments: true,
+					useSourceUrl: false,
 					mainConfigFile: settings.requireJsMainConfig,
+					baseUrl: './build/',
+					paths: {
+						"cs": "../lib/noop"
+					},
 					out: settings.distFile
 				}
 			},
@@ -40,6 +44,17 @@ module.exports = function(grunt) {
 		},
 		coffee: {
 			compile: {
+				options: {
+					bare: true
+				},
+				expand: true,
+				flatten: false,
+				cwd: './src/',
+				src: ['**/*.coffee'],
+				dest: settings.build,
+				ext: '.js'
+			},
+			test: {
 				options: {
 					bare: true
 				},
@@ -78,7 +93,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 
 	// Default task(s).
-	grunt.registerTask('test', ['requirejs:test', 'coffee', 'jasmine']);
-	grunt.registerTask('default', ['requirejs:test', 'coffee', 'jasmine', 'requirejs:compile']);
+	grunt.registerTask('test', ['requirejs:test', 'coffee:test', 'jasmine']);
+	grunt.registerTask('default', ['requirejs:test', 'coffee:test', 'jasmine', 'coffee:compile', 'requirejs:compile']);
 
 }
