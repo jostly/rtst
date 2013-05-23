@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
