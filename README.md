@@ -1,7 +1,6 @@
-rtst
-====
+# rtst [![Build Status](https://travis-ci.org/jostly/rtst.png)](https://travis-ci.org/jostly/rtst)
 
-Skeleton for node.js + grunt + jasmine + require
+> Skeleton for node.js + grunt + jasmine + require
 
 Requires node.js and grunt-cli installed
 
