@@ -1,6 +1,10 @@
 {
   "name": "rtst",
   "version": "0.1.0",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.4.0",
